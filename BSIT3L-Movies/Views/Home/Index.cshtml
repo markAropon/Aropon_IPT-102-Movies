@@ -4,28 +4,68 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<table>
-    <thead>
+<html>
+    <body class="">
+    <table class="table text-center border-1 border-dark table-hover p-lg-5">
+    <thead class="border-1 border-dark">
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
+            <th class="table-primary">ID</th>
+            <th class="table-primary">Name</th>
+            <th class="table-primary">Rating</th>
+            <th class="table-primary">Release Year</th>
+            <th class="table-primary">Genre</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="border-1 border-dark">
         @foreach (var movie in Model)
         {
-            <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
-                <td>@movie.Genre</td>
-            </tr>
+                <tr class="">
+                    <td class="bg-success">
+                        <a class="text-decoration-none text-black cell-link" href="/movies/getmovie/@movie.Id">
+                            @movie.Id
+                        </a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none text-black cell-link" href="/movies/getmovie/@movie.Id">
+                            @movie.Name
+                        </a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none text-black cell-link" href="/movies/getmovie/@movie.Id">
+                            @movie.Rating
+                        </a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none text-black cell-link" href="/movies/getmovie/@movie.Id">
+                            @movie.ReleaseYear
+                        </a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none text-black cell-link" href="/movies/getmovie/@movie.Id">
+                            @movie.Genre
+                        </a>
+                    </td>
+                </tr>
         }
     </tbody>
 </table>
+</body>
+<style>
+    .cell-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+    tr:hover{
+        background-color:lightblue;
+    }
+    .main{
+        margin-bottom:100px;
+    }
+   
+</style>
+</html>
+
 
